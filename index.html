@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חג שבועות - משפחת גץ כבוד</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1 class="animate__animated animate__bounce">חג שבועות - משפחת גץ כבוד</h1>
+            <div class="level-indicator">
+                <span>שלב: </span>
+                <span id="current-level">1</span>
+            </div>
+        </header>
+        
+        <div id="start-screen" class="screen">
+            <h2>ברוכים הבאים למשחק שבועות!</h2>
+            <div class="player-info">
+                <input type="text" id="player-name" placeholder="הכנס את שמך" maxlength="15">
+            </div>
+            <button id="start-game" class="animate__animated animate__pulse animate__infinite">התחל משחק</button>
+            <button id="show-instructions">הוראות משחק</button>
+            <button id="show-leaderboard">טבלת שיאים</button>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <div class="game-header">
+                <div class="player-stats">
+                    <span id="player-name-display"></span>
+                    <div class="score-container">
+                        <span>ניקוד: </span>
+                        <span id="score">0</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill"></div>
+                    </div>
+                    <div class="level-info">
+                        <span>שלב </span>
+                        <span id="level-number">1</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h3 id="question-text"></h3>
+                <div id="options-container"></div>
+            </div>
+
+            <div class="feedback-container">
+                <p id="feedback-text"></p>
+            </div>
+
+            <div class="power-ups">
+                <button id="fifty-fifty" class="power-up" title="הסר 2 תשובות שגויות">50:50</button>
+                <button id="hint" class="power-up" title="קבל רמז">רמז</button>
+                <button id="skip" class="power-up" title="דלג על שאלה">דלג</button>
+            </div>
+        </div>
+
+        <div id="end-screen" class="screen hidden">
+            <h2>כל הכבוד!</h2>
+            <div class="final-stats">
+                <p>הניקוד הסופי שלך: <span id="final-score">0</span></p>
+                <p>השיא האישי שלך: <span id="high-score">0</span></p>
+            </div>
+            <div class="achievements">
+                <h3>הישגים</h3>
+                <div id="achievements-list"></div>
+            </div>
+            <button id="play-again">שחק שוב</button>
+            <button id="share-score">שתף תוצאה</button>
+        </div>
+
+        <div id="instructions-screen" class="screen hidden">
+            <h2>הוראות משחק</h2>
+            <div class="instructions-content">
+                <ul>
+                    <li>במשחק יש 5 שלבים, כל שלב מכיל 6 שאלות</li>
+                    <li>כל תשובה נכונה מזכה ב-10 נקודות</li>
+                    <li>בכל שלב יש בונוס מיוחד:</li>
+                    <ul>
+                        <li>שלב 1: 50:50 - מסיר 2 תשובות שגויות</li>
+                        <li>שלב 2: רמז - מקבל רמז לשאלה</li>
+                        <li>שלב 3: דלג - מדלג על שאלה קשה</li>
+                        <li>שלב 4: זמן נוסף - מקבל 30 שניות נוספות</li>
+                        <li>שלב 5: כפול נקודות - כל תשובה נכונה שווה 20 נקודות</li>
+                    </ul>
+                    <li>יש לבחור את התשובה הנכונה מבין 4 אפשרויות</li>
+                    <li>המשחק מסתיים כשנגמרות כל השאלות</li>
+                </ul>
+            </div>
+            <button id="back-to-start">חזרה לתפריט הראשי</button>
+        </div>
+
+        <div id="leaderboard-screen" class="screen hidden">
+            <h2>טבלת שיאים</h2>
+            <div id="leaderboard-list"></div>
+            <button id="back-to-start-from-leaderboard">חזרה לתפריט הראשי</button>
+        </div>
+    </div>
+    <script src="game-standalone.js"></script>
+</body>
+</html> 
